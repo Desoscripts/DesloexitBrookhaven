@@ -33,6 +33,20 @@ local Slider = Tab:CreateSlider({
     DevTools.Player:SetSpeed(Value)
     end,
 })
+
+local Label = Tab:CreateLabel("JumpPower")
+local Slider = Tab:CreateSlider({
+    Name = "JumpPower",
+    Suffix = "Feet",
+
+    Range = {16,100},
+    Interval = 1,
+    Default = 16,
+
+    Callback = function(Value)
+        DevTools.Player:SetJumpPower(Value)
+    end,
+})
 local Button = Tab:CreateButton({
     Name="Reset Character",
     Callback=function()
