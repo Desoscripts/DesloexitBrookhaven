@@ -21,13 +21,20 @@ local Tab = Window:CreateTab({Name="Car"})
 
 local Tab = Window:CreateTab({Name="Avatar"})
 
+
+
+
+local Tab = Window:CreateTab({Name="Fun!"})
+
+local Label = Tab:CreateLabel("Walkspeed")
+
 local Slider = Tab:CreateSlider({
     Name = "Walkspeed",
     Suffix = "Speed",
 
     Range = {16,100},
     Interval = 1,
-    Default=16,
+    Default = 16,
 
     Callback = function(Value)
     DevTools.Player:SetSpeed(Value)
@@ -43,16 +50,18 @@ local Slider = Tab:CreateSlider({
     Interval = 1,
     Default = 16,
 
-    Callback = function(Value)
+    Callback = function(Value)        
         DevTools.Player:SetJumpPower(Value)
     end,
 })
+
+local Label = Tab:CreateLabel("Reset Button")
+
 local Button = Tab:CreateButton({
-    Name="Reset Character",
-    Callback=function()
-    DevTools.Player:Kill()
+    Name = "Reset Character",
+
+    Callback = function()
+     DevTools.Player:Kill()
     end,
 })
-local Tab = Window:CreateTab({Name="Fun!"})
-
 local Tab = Window:CreateTab({Name="Other Hubs"})
